@@ -61,6 +61,16 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _decrementCounter() {
+    setState(() {
+      if (_counter <= 0) {
+        _counter -= 0;
+      } else {
+        _counter--;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -95,9 +105,24 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+            // const Text(
+            //   'You have pushed the button this many times:',
+            // ),
+            _counter % 2 == 1 ?
+              const Text(
+                "GANJIL",
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+              )
+              : 
+              const Text(
+                "GENAP",
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
+
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
@@ -105,11 +130,30 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 30),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Visibility (
+              visible: _counter <= 0 ? false: true,
+              child: FloatingActionButton(
+                onPressed: _decrementCounter,
+                tooltip: 'Decrement',
+                child: const Icon(Icons.remove),
+              ) 
+            ),
+
+            FloatingActionButton(
+              onPressed: _incrementCounter,
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
+            )             
+          ],
+        )
+        )
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
