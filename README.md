@@ -55,6 +55,6 @@ floatingActionButton: Padding(
 
 - Menambahkan widget `Row` pada `floatingAppButton` untuk membuat baris baru yang akan berisi 2 floating button.
 - Membuat fungsi `_incrementCounter()` dan `_decrementCounter()` untuk menambahkan dan mengurangi `counter`.
-- Menambahkan conditional untuk menampilkan teks `GANJIL` berwarna biru dan `GENAP` berwarna merah sesuat dengan state dari `counter`.
+- Menambahkan conditional untuk menampilkan teks `GANJIL` berwarna biru dan `GENAP` berwarna merah sesuai dengan state dari `counter`.
 - Hubungkan fungsi `_incrementCounter()` pada properti onPressed di button increment dan hubungkan fungsi `_decrementCounter()` pada properti onPressed di button decrement. 
 - Menambahkan conditional untuk handle decrement ketika counter kurang dari atau sama dengan 0 dan ketika counter lebih dari 0.
