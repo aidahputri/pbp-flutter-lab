@@ -57,4 +57,43 @@ floatingActionButton: Padding(
 - Membuat fungsi `_incrementCounter()` dan `_decrementCounter()` untuk menambahkan dan mengurangi `counter`.
 - Menambahkan conditional untuk menampilkan teks `GANJIL` berwarna biru dan `GENAP` berwarna merah sesuai dengan state dari `counter`.
 - Hubungkan fungsi `_incrementCounter()` pada properti onPressed di button increment dan hubungkan fungsi `_decrementCounter()` pada properti onPressed di button decrement. 
-- Menambahkan conditional untuk handle decrement ketika counter kurang dari atau sama dengan 0 dan ketika counter lebih dari 0.
+- Menambahkan conditional untuk handle decrement ketika counter kurang dari atau sama dengan 0 dan ketika counter lebih dari 0. 
+
+<br>
+
+# **Tugas 8**
+
+## Jelaskan perbedaan `Navigator.push` dan `Navigator.pushReplacement`.
+`Navigator.push` merupakan method untuk menambahkan route ke stack route yang di-manage oleh Navigator. Sementara itu, `Navigator.pushReplacement` mengganti route navigator yang sedang dilihat pengguna dengan yang baru dan menambah route tersebut ke stack route navigator.
+
+<br>
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya
+1. `Text`, memperbagus tulisan yang akan ditampilkan ke pengguna dengan memberikan style
+2. `Row` and `Column`, menyusun isi widget secara horizontal dan vertikal
+3. `Center`, membuat posisi children ke tengah
+4. `Navigator`, mengelola rute pada program menggunakan Stack
+5. `Expanded`, memperluas child dari baris dan kolom untuk mengisi ruang yang ada
+6. `Drawer`, membuat panel di sisi layar agar user bisa mengganti halaman
+7. `Form`, wadah untuk mengelompokkan widget-widget form yang diperlukan
+8. `DropdownButton`, widget berupa button yang ketika diklik memunculkan beberapa pilihan. Pada tugas kali ini, digunakan sebagai input pemasukan atau pengeluaran.
+
+<br>
+
+## Sebutkan jenis-jenis event yang ada pada Flutter (contoh: `onPressed`)
+- onPressed()
+- onChanged()
+- onSaved()
+
+<br>
+
+## Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter
+Navigator menggunakan struktur data stack. Stack ini digunakan untuk layar sehingga method push menampilkan top of stack dari stack layar tersebut.
+
+<br>
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Menambahkan drawer untuk menu counter, form, dan data budget.
+2. Menambahkan halaman form dengan input yang bisa diisi string, integer, dropdown, dan button. Input yang telah diisi akan dimasukkan kedalam list untuk disimpan agar bisa ditampilkan pada halaman budget data. Widget-widget pada halaman form disusun berjejer secara vertikal.
+3. Menambahkan halaman budget data untuk menunjukkan data yang sudah diinput pengguna. Data-data yang ditampilkan disusun secara vertikal.
+4. Membuat sebuah class Budget. Class ini digunakan untuk menyimpan data-data budget yang ditambahkan. Data-data tersebut kemudian disimpan di dalam sebuah static list.
