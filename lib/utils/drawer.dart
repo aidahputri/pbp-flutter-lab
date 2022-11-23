@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/form.dart';
-import 'package:counter_7/budget_data.dart';
+import 'package:counter_7/page/forms/form.dart';
+import 'package:counter_7/page/budget_data/budget_data.dart';
 
 Drawer drawerBuild(BuildContext context) {
   String? route = ModalRoute.of(context)?.settings.name;
@@ -40,6 +40,17 @@ Drawer drawerBuild(BuildContext context) {
               Navigator.pop(context);
             } else { // ke data budget
               Navigator.pushReplacementNamed(context, '/budget-data');
+            }
+          },
+        ),
+
+        ListTile(
+          title: const Text('My Watch List'),
+          onTap: () {
+            if (route == '/mywatchlist') {
+              Navigator.pop(context);
+            } else { // ke data budget
+              Navigator.pushReplacementNamed(context, '/mywatchlist');
             }
           },
         ),
