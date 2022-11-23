@@ -56,9 +56,7 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                           color: Color.fromARGB(255, 207, 171, 231),
                           borderRadius: BorderRadius.circular(17.0),
                           border: Border.all(
-                            color: snapshot.data![index].watched
-                                ? Colors.pink.shade300
-                                : Color.fromARGB(255, 212, 68, 57),
+                            color: snapshot.data![index].watched ? Colors.pink.shade300 : Color.fromARGB(255, 212, 68, 57),
                             width: 4.0,
                           ),
                         ),
