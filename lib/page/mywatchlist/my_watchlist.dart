@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:counter_7/model/mywatchlist.dart';
 import 'package:counter_7/utils/drawer.dart';
 import 'package:counter_7/utils/fetch_mywatchlist.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyWatchlistPage extends StatefulWidget {
   const MyWatchlistPage({Key? key}) : super(key: key);
@@ -28,12 +29,16 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
             } else {
               if (!snapshot.hasData) {
                 return Column(
-                  children: const [
+                  children: [
                     Text(
                       "Oh no! Tidak ada watch list :(",
-                      style: TextStyle(color: Color(0xff59A5D8), fontSize: 20),
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                        color: Color(0xff59A5D8), 
+                        fontSize: 20)
+                      ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                   ],
                 );
               } else {
@@ -50,13 +55,13 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                     },
                     child: Container(
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 16),
+                            horizontal: 16, vertical: 10),
                         padding: const EdgeInsets.all(20.0),
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 207, 171, 231),
+                          color: const Color.fromARGB(255, 207, 171, 231),
                           borderRadius: BorderRadius.circular(17.0),
                           border: Border.all(
-                            color: snapshot.data![index].watched ? Colors.pink.shade300 : Color.fromARGB(255, 212, 68, 57),
+                            color: snapshot.data![index].watched ? Colors.pink.shade300 : Colors.blue.shade300,
                             width: 4.0,
                           ),
                         ),
@@ -65,11 +70,17 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                                 MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text(
-                                snapshot.data![index].title,
-                                style: const TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
+                              Flexible(
+                                child: Text(
+                                  snapshot.data![index].title,
+                                  style: GoogleFonts.poppins(
+                                    textStyle: const TextStyle(
+                                    color: Colors.deepPurple,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                                  ),
+                                  overflow: TextOverflow.fade,
                                 ),
                               ),
                               Checkbox(

@@ -24,11 +24,11 @@ class MyWatchlist {
     String review;
 
     factory MyWatchlist.fromJson(Map<String, dynamic> json) => MyWatchlist(
-        watched: json["watched"],
-        title: json["title"],
-        rating: json["rating"],
-        releaseDate: DateTime.parse(json["release_date"]),
-        review: json["review"],
+        watched: json["fields"]["watched"],
+        title: json["fields"]["title"],
+        rating: json["fields"]["rating"].toString(),
+        releaseDate: DateTime.parse(json["fields"]["release_date"]),
+        review: json["fields"]["review"],
     );
 
     Map<String, dynamic> toJson() => {

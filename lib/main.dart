@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/page/forms/form.dart';
 import 'package:counter_7/page/mywatchlist/my_watchlist.dart';
+import 'package:counter_7/page/mywatchlist/detail.dart';
 import 'package:counter_7/utils/drawer.dart';
 import 'package:counter_7/page/budget_data/budget_data.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/budget-form': (context) => const BudgetForm(),
         '/budget-data': (context) => const BudgetData(),
-        '/mywatchlist': (context) => const MyWatchlistPage()
+        '/mywatchlist': (context) => const MyWatchlistPage(),
+        '/mywatchlist-detail': (context) => const MyWatchlistDetail()
       },
     );
   }
