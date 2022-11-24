@@ -97,3 +97,37 @@ Navigator menggunakan struktur data stack. Stack ini digunakan untuk layar sehin
 2. Menambahkan halaman form dengan input yang bisa diisi string, integer, dropdown, dan button. Input yang telah diisi akan dimasukkan kedalam list untuk disimpan agar bisa ditampilkan pada halaman budget data. Widget-widget pada halaman form disusun berjejer secara vertikal.
 3. Menambahkan halaman budget data untuk menunjukkan data yang sudah diinput pengguna. Data-data yang ditampilkan disusun secara vertikal.
 4. Membuat sebuah class Budget. Class ini digunakan untuk menyimpan data-data budget yang ditambahkan. Data-data tersebut kemudian disimpan di dalam sebuah static list.
+
+# **Tugas 9**
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Pengambilan data tetap bisa dilakukan tanpa membuat model terlebih dahulu. Namun, apabila tidak membuat model terlebih dahulu bisa saja struktur dari data yang didapat tidak sesuai dengan keinginan kita. Maka dari itu, sebaiknya menentukan model terlebih dahulu agar data JSON yang diambil lebih terstuktur dan mudah digunakan.
+
+<br>
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya
+1. `Text`, memperbagus tulisan yang akan ditampilkan ke pengguna dengan memberikan style
+2. `Row` and `Column`, menyusun isi widget secara horizontal dan vertikal
+3. `Center`, membuat posisi children ke tengah
+4. `Flexible` agar text menjadi tidak overflow
+5. `CheckBox` digunakan sebagai button checkbox untuk mengubah status `watched`
+6. `InkWell` dapat memberikan behavior klik pada child widgetnya. Penggunaan widget `inkwell` memungkinkan seluruh bagian dari child nya memiliki behavior klik.
+7. `TextButton` digunakan sebagai button back pada halaman detail `MyWatchlist`.
+
+<br>
+
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter
+1. Data difetch dari sebuah API endpoint.
+2. Response data kemudian didecode menjadi JSON, lalu dikonversi menjadi sebuah model.
+3. Data dalam bentuk model akan di tampilkan pada aplikasi flutter.
+
+<br>
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas
+1. Menambahkan mywatchlist pada drawer untuk mengakses `my_watchlist`
+2. Menambahkan hal-hal yang perlu untuk melakukan fetch data, seperti menambahkan dependency dan permission internet pada android
+3. Menambahkan model `MyWatchlist` dengan fields yang sesuai dengan fields object pada Tugas 3 Django.
+4. Membuat utils untuk fetch data pada JSON.
+5. Memanfaatkan function utils pada `my_watchlist` untuk menampilkan data.
+6. Data ditampilkan dalam bentuk cards yang berisi judul film dan checkbox. Kumpulan cards tersebut dapat diklik untuk mengakses page detail.
+7. Membuat page detail yang berisi detail dari `MyWatchlist` yang diperoleh dari argumen navigasi dan button back untuk kembali ke `my_watchlist`.
